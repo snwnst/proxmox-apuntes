@@ -1,6 +1,6 @@
 # proxmox-apuntes
 
-##Creating an extra LV for /var/lib/vz
+## Creating an extra LV for /var/lib/vz
     This can be easily done by creating a new thin LV.
         - lvcreate -n <Name> -V <Size[M,G,T]> <VG>/<LVThin_pool>
     
@@ -15,6 +15,6 @@
     To make it always accessible add the following line in /etc/fstab.
         - echo '/dev/pve/vz /var/lib/vz ext4 defaults 0 2' >> /etc/fstab
 
-##Create a LVM-thin pool
+## Create a LVM-thin pool
     A thin pool has to be created on top of a volume group. How to create a volume group see Section LVM.
         - lvcreate -L 80G -T -n vmstore vmdata
